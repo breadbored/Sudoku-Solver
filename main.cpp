@@ -115,14 +115,6 @@ bool existsInBlock(int number, int x, int y) {
       }
     }
   }
-  
-  // for (int i = 0; i < 3; i++) {
-  //   for (int j = 0; j < 3; j++) {
-  //     if (number == boardGuess[((blockX * 3) + i) + ((blockY * 3) + j)]) {
-  //       return true;
-  //     }
-  //   }
-  // }
   return false;
 }
 
