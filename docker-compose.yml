@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  sudoku:
+    image: sudoku
+    build:
+      context: .
+      dockerfile: ./Dockerfile
