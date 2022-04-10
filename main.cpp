@@ -135,16 +135,11 @@ bool trySolve(int pos) {
   if (pos == ((9 * 9) - 1)) return true;
   int x = pos % 9;
   int y = pos / 9;
-  // std::printf("X %s\n", std::to_string(x).c_str());
-  // std::printf("Y %s\n", std::to_string(y).c_str());
   for (int i = 0; i < 9; i++) {
-    // std:printf("X,Y,i %s, %s, %s\n", std::to_string(x).c_str(), std::to_string(y).c_str(), std::to_string(i).c_str());
     resetToPos(pos);
     if (validNumber(i + 1, x, y)) {
       boardGuess[pos] = i + 1;
       if (trySolve(pos + 1)) {
-        // std::string board = draw();
-        // std::printf("%s\n", board.c_str());
         return true;
       };
     }
@@ -157,26 +152,22 @@ int main(int argc, char** argv) {
   bool solved = false;
   int guesses = 0;
 
-  // while (!solved) {
-    // padding
-    std::printf("\n\n");
+  // padding
+  std::printf("\n\n");
 
-    // Copy board to guesser
-    std::copy(std::begin(boardValues), std::end(boardValues), std::begin(boardGuess));
+  // Copy board to guesser
+  std::copy(std::begin(boardValues), std::end(boardValues), std::begin(boardGuess));
 
-    // draw
-    std::string board = draw();
-    std::printf("%s\n", board.c_str());
-    std::printf("%s\n", ("Attempt " + std::to_string(guesses)).c_str());
+  // draw
+  std::string board = draw();
+  std::printf("%s\n", board.c_str());
+  std::printf("%s\n", ("Attempt " + std::to_string(guesses)).c_str());
 
-    solved = trySolve(0);
+  solved = trySolve(0);
 
-    // draw after solve
-    board = draw();
-    std::printf("%s\n", board.c_str());
-  // }
-
-
+  // draw after solve
+  board = draw();
+  std::printf("%s\n", board.c_str());
 
   std::printf("\n\n");
   return 0;
