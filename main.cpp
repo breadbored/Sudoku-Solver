@@ -79,7 +79,7 @@ std::string draw() {
 int getNumber(char board[9 * 9], int x, int y) {
   int index = (9 * y) + x;
   if (x >= 0 && x < 9 && y >= 0 && y < 9) {
-    return boardValues[index];
+    return board[index];
   }
   return -1;
 }
